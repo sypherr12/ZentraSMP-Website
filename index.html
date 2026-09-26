@@ -17,10 +17,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="background-grid" aria-hidden="true"></div>
     <header class="topbar">
       <div class="container nav">
-        <div class="brand">ZentraSMP</div>
-        <nav class="nav-links" aria-label="Ana menü">
+        <a class="brand" href="#hakkinda">Zentra<span>SMP</span></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+        <nav class="nav-links" id="navLinks" aria-label="Ana menü">
           <a href="#hakkinda">Hakkında</a>
           <a href="#ozellikler">Özellikler</a>
           <a href="#kurallar">Kurallar</a>
@@ -32,21 +34,27 @@
     <main>
       <section class="hero" id="hakkinda">
         <div class="container hero-grid">
-          <div class="hero-copy">
-            <span class="badge">Survival • Dostça • Eğlenceli</span>
-            <h1>ZentraSMP</h1>
+          <div class="hero-copy reveal">
+            <span class="badge"><span class="pulse-dot"></span> Survival • Dostça • Eğlenceli</span>
+            <h1>Kendi hikâyeni <span>inşa et.</span></h1>
             <p>
               ZentraSMP, rahat bir survival deneyimi sunan, güvenli ve samimi bir
-              Minecraft topluluğudur. Yapılar kurar, kaynak toplar, birlikte keşif
-              yapar ve eğlenceli anlar yaşarsın.
+              Minecraft topluluğudur. Yapılar kur, kaynak topla, birlikte keşfet ve
+              eğlenceli anlar yaşa.
             </p>
             <div class="cta-row">
-              <a href="#katil" class="btn btn-primary">Sunucuya Katıl</a>
+              <a href="#katil" class="btn btn-primary">Sunucuya Katıl <span>→</span></a>
               <a href="#kurallar" class="btn btn-secondary">Kuralları Gör</a>
+            </div>
+            <div class="quick-stats">
+              <div><strong>12</strong><span>Aktif oyuncu</span></div>
+              <div><strong>1.21.11</strong><span>Sunucu sürümü</span></div>
+              <div><strong>24/7</strong><span>Macera</span></div>
             </div>
           </div>
 
-          <aside class="hero-card" id="katil">
+          <aside class="hero-card reveal" id="katil">
+            <div class="card-glow"></div>
             <div class="server-card">
               <span class="label">Sunucu IP</span>
               <button class="ip-box" id="copyIpBtn" type="button" aria-label="IP adresini kopyala">
@@ -54,10 +62,10 @@
                 <span class="copy-icon">⧉</span>
               </button>
             </div>
-
-            <div class="players-row">
-              <span>Aktif Oyuncu</span>
-              <strong>12</strong>
+            <div class="server-details">
+              <div class="players-row"><span><i class="status-dot"></i>Sunucu durumu</span><strong>Çevrimiçi</strong></div>
+              <div class="players-row"><span>Aktif oyuncu</span><strong>12</strong></div>
+              <div class="players-row"><span>Sürüm</span><strong>1.21.11</strong></div>
             </div>
           </aside>
         </div>
@@ -65,217 +73,32 @@
 
       <section class="features" id="ozellikler">
         <div class="container">
-          <h2 class="section-title">Sunucumuzun Özellikleri</h2>
-          <p class="section-sub">
-            Basit ama keyifli bir survival deneyimi yaşamak için doğru yerdesin.
-          </p>
-
+          <div class="section-heading reveal"><span class="eyebrow">Neden ZentraSMP?</span><h2 class="section-title">Macera burada başlıyor.</h2><p class="section-sub">Basit ama keyifli bir survival deneyimi yaşamak için doğru yerdesin.</p></div>
           <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Survival Odaklı</h3>
-              <p>
-                Doğal yaşam, kaynak toplama, inşa etme ve birlikte ilerleme için
-                tasarlanmış bir ortam.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>Topluluk Odaklı</h3>
-              <p>
-                Birbirine saygılı oyuncularla dostça bir ortamda düzenli ve eğlenceli
-                bir deneyim yaşarsın.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>Kolay Katılım</h3>
-              <p>
-                Hızlıca sunucumuza katılabilir, arkadaşlarınla birlikte harika yapılar
-                kurup keyifli vakit geçirebilirsin.
-              </p>
-            </article>
+            <article class="feature-card reveal"><div class="feature-icon">◆</div><h3>Survival Odaklı</h3><p>Doğal yaşam, kaynak toplama, inşa etme ve birlikte ilerleme için tasarlanmış bir ortam.</p></article>
+            <article class="feature-card reveal"><div class="feature-icon">✦</div><h3>Topluluk Odaklı</h3><p>Birbirine saygılı oyuncularla dostça bir ortamda düzenli ve eğlenceli bir deneyim yaşarsın.</p></article>
+            <article class="feature-card reveal"><div class="feature-icon">➜</div><h3>Kolay Katılım</h3><p>Hızlıca sunucumuza katılabilir, arkadaşlarınla birlikte harika yapılar kurup keyifli vakit geçirebilirsin.</p></article>
           </div>
         </div>
       </section>
 
       <section class="rules" id="kurallar">
         <div class="container">
-          <h2 class="section-title">Kurallar</h2>
-          <div class="rules-box">
-            <ol>
-              <li>Saygılı Ol — Diğer oyunculara ve yetkililere karşı saygılı davran.</li>
-              <li>Hile Yasak — Hile, X-Ray veya oyuncuya avantaj sağlayan yasaklı modlar kullanılamaz.</li>
-              <li>Grief Yasak — Başka oyuncuların yapılarına izinsiz zarar vermek yasaktır.</li>
-              <li>Reklam Yasak — Başka sunucuların veya sitelerin reklamını yapmak yasaktır.</li>
-              <li>Spam Yapma — Sohbette flood, spam ve gereksiz mesaj göndermeyin.</li>
-              <li>Yetkililere Uy — Sunucunun düzenini korumak için yetkililerin kurallarına uyun.</li>
-            </ol>
-          </div>
+          <div class="section-heading reveal"><span class="eyebrow">Topluluk rehberi</span><h2 class="section-title">Kurallar</h2><p class="section-sub">Herkes için keyifli ve adil bir oyun ortamı oluşturalım.</p></div>
+          <div class="rules-box reveal"><ol>
+            <li><span>01</span><div><b>Saygılı Ol</b><small>Diğer oyunculara ve yetkililere karşı saygılı davran.</small></div></li>
+            <li><span>02</span><div><b>Hile Yasak</b><small>Hile, X-Ray veya oyuncuya avantaj sağlayan yasaklı modlar kullanılamaz.</small></div></li>
+            <li><span>03</span><div><b>Grief Yasak</b><small>Başka oyuncuların yapılarına izinsiz zarar vermek yasaktır.</small></div></li>
+            <li><span>04</span><div><b>Reklam Yasak</b><small>Başka sunucuların veya sitelerin reklamını yapmak yasaktır.</small></div></li>
+            <li><span>05</span><div><b>Spam Yapma</b><small>Sohbette flood, spam ve gereksiz mesaj göndermeyin.</small></div></li>
+            <li><span>06</span><div><b>Yetkililere Uy</b><small>Sunucunun düzenini korumak için yetkililerin kurallarına uyun.</small></div></li>
+          </ol></div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container">
-        <p>© 2026 ZentraSMP | Tüm hakları saklıdır.</p>
-      </div>
-    </footer>
-
+    <footer class="footer"><div class="container"><p>© 2026 ZentraSMP <span>•</span> Minecraft Survival Sunucusu</p></div></footer>
+    <div class="toast" id="toast" role="status">IP adresi kopyalandı!</div>
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
